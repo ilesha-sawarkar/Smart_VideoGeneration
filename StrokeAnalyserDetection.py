@@ -48,7 +48,7 @@ def detect_front_crawl(pose_landmarks):
     left_wrist = pose_landmarks.landmark[mp.solutions.pose.PoseLandmark.LEFT_WRIST]
     right_wrist = pose_landmarks.landmark[mp.solutions.pose.PoseLandmark.RIGHT_WRIST]
     
-    # Check the relative position and angle of the wrists and elbows to the shoulders
+
     left_wrist_above_shoulder = left_wrist.y > left_shoulder.y
     right_wrist_above_shoulder = right_wrist.y > right_shoulder.y
     left_elbow_above_shoulder = left_elbow.y > left_shoulder.y
@@ -58,7 +58,7 @@ def detect_front_crawl(pose_landmarks):
     
     if left_wrist_above_shoulder and right_wrist_above_shoulder and \
             left_elbow_above_shoulder and right_elbow_above_shoulder and \
-            abs(left_wrist_elbow_angle) > 150 and abs(right_wrist_elbow_angle) > 150:
+            abs(left_wrist_elbow_angle) > 120 and abs(right_wrist_elbow_angle) > 120:
         return True
     else:
         return False
