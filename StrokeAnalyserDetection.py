@@ -74,7 +74,7 @@ with mp_pose.Pose(static_image_mode=False, min_detection_confidence=0.5, min_tra
     print(os.listdir(input_dir))
     
     for video_file in os.listdir(input_dir):
-        if video_file.endswith('Technique.mp4'):
+        if video_file.endswith('.mp4'):
             video_path = os.path.join(input_dir, video_file)
             video_capture = cv2.VideoCapture(video_path)
             strokes = []
